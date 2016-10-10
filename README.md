@@ -10,7 +10,7 @@ Just provide the `config` and the `factory`. You can hard code the connection st
 
 ### Give a config
 
-As the name. It provide the configuration.
+As the name. It provide the configuration. You can use the `DefaultConfig` which get connection string from environment variable.
 
 ```
 type Config interface {
@@ -23,7 +23,7 @@ type Config interface {
 
 ### Give a factory
 
-It provide the native mongodb session.
+It provide the native mongodb session. You can use the `DefaultFactory`.
 
 ```
 type Factory interface {

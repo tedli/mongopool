@@ -5,8 +5,8 @@ import (
 )
 
 func TestMongoPool(t *testing.T) {
-	config := defaultConfig{}
-	factory := defaultFactory{}
+	config := DefaultConfig{}
+	factory := DefaultFactory{}
 	pool := NewMongoPool(config, factory)
 	defer pool.Close()
 

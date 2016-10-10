@@ -2,17 +2,17 @@ package mongopool
 
 import "os"
 
-type defaultConfig struct {
+type DefaultConfig struct {
 }
 
-func (config defaultConfig) ConnectionString() string {
+func (config DefaultConfig) ConnectionString() string {
 	return os.Getenv("MONGODB")
 }
 
-func (config defaultConfig) InitialCount() int {
+func (config DefaultConfig) InitialCount() int {
 	return 1
 }
 
-func (config defaultConfig) PoolCapacity() int {
+func (config DefaultConfig) PoolCapacity() int {
 	return 10
 }
