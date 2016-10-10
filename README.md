@@ -57,7 +57,7 @@ Then you can use the warpped session instance as if it is a native session.
 session.Close()
 ```
 
-You can just close it. The it will be put back to the pool.
+You can just close it. Then it will be put back to the pool.
 
 
 ### Close the backend native session for some reason

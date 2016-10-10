@@ -42,7 +42,7 @@ func TestMongoPool(t *testing.T) {
 	} else {
 		t.Log("session count is 2")
 	}
-	var sessions [11]MongoSession
+	var sessions [11]*MongoSession
 	for i := 0; i < config.PoolCapacity(); i++ {
 		sessions[i] = pool.Get()
 	}
@@ -61,7 +61,7 @@ func TestMongoPool(t *testing.T) {
 	if len(rawPool.pool) != 10 {
 		t.Errorf("pool capacity is not %d", config.PoolCapacity())
 	} else {
-		t.Logf("pool capacity is %d", config.InitialCount())
+		t.Logf("pool capacity is %d", config.PoolCapacity())
 	}
 
 	if sessions[0].Session != nil {

@@ -12,14 +12,14 @@ type mongoPool struct {
 	pool chan *mgo.Session
 }
 
-func (mp *mongoPool) Get() MongoSession {
+func (mp *mongoPool) Get() *MongoSession {
 	mp.syncRoot.Lock()
 	defer mp.syncRoot.Unlock()
 	select {
 	case session := <- mp.pool:
-		return MongoSession{session, mp}
+		return &MongoSession{session, mp}
 	default:
-		return MongoSession{mp.factory.CreateNativeSession(mp.config.ConnectionString()), mp}
+		return &MongoSession{mp.factory.CreateNativeSession(mp.config.ConnectionString()), mp}
 	}
 }
 

@@ -13,7 +13,7 @@ type Factory interface {
 }
 
 type MongoPool interface {
-	Get() MongoSession
+	Get() *MongoSession
 	Close()
 }
 
